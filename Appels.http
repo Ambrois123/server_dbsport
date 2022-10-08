@@ -1,0 +1,4 @@
+###
+Send Request
+GET http://localhost/server_dbsport/api/client/read.php HTTP/1.1
+Accept: application/json
