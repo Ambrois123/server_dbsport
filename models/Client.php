@@ -71,4 +71,60 @@ class Client {
             $this->client_prez = $row['client_prez'];
         }
 
+        public function create(){
+            $sql = 'INSERT INTO client 
+            SET
+            client_name = :client_name,
+            client_adress = :client_adress,
+            client_active  = :client_active,
+            client_phone = :client_phone,
+            client_email = :client_email,
+            client_dpo = :client_dpo,
+            client_tech = :client_tech,
+            client_com = :client_com,
+            client_url = :client_url,
+            client_logo = :client_logo,
+            client_historic = :client_historic,
+            client_prez = :client_prez            
+            ';
+
+            $stmt = $this->conn->prepare($sql);
+
+            //clean data
+            $this->client_name = htmlspecialchars(strip_tags($this->client_name));
+            $this->client_adress = htmlspecialchars(strip_tags($this->client_adress));
+            $this->client_active = htmlspecialchars(strip_tags($this->client_active));
+            $this->client_phone = htmlspecialchars(strip_tags($this->client_phone));
+            $this->client_email = htmlspecialchars(strip_tags($this->client_email));
+            $this->client_dpo = htmlspecialchars(strip_tags($this->client_dpo));
+            $this->client_tech = htmlspecialchars(strip_tags($this->client_tech));
+            $this->client_com = htmlspecialchars(strip_tags($this->client_com));
+            $this->client_url = htmlspecialchars(strip_tags($this->client_url));
+            $this->client_logo = htmlspecialchars(strip_tags($this->client_logo));
+            $this->client_historic = htmlspecialchars(strip_tags($this->client_historic));
+            $this->client_prez = htmlspecialchars(strip_tags($this->client_prez));
+
+            //bind data
+            $stmt->bindParam(':client_name', $this->client_name);
+            $stmt->bindParam(':client_adress', $this->client_adress);
+            $stmt->bindParam(':client_active', $this->client_active);
+            $stmt->bindParam(':client_phone', $this->client_phone);
+            $stmt->bindParam(':client_email', $this->client_email);
+            $stmt->bindParam(':client_dpo', $this->client_dpo);
+            $stmt->bindParam(':client_tech', $this->client_tech);
+            $stmt->bindParam(':client_com', $this->client_com);
+            $stmt->bindParam(':client_url', $this->client_url);
+            $stmt->bindParam(':client_logo', $this->client_logo);
+            $stmt->bindParam(':client_historic', $this->client_historic);
+            $stmt->bindParam(':client_prez', $this->client_prez);
+
+            //execute sql
+            if($stmt->execute()){
+                return true;
+            }
+
+            //print error if error
+            printf("Erreur: %.\n", $stmt->error);
+        }
+
 }

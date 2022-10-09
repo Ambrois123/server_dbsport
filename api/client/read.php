@@ -5,6 +5,7 @@ header('Content-Type: application/json; charset=UTF-8');
 include_once '../../Config/Database.php';
 include_once '../../models//Client.php';
 
+//instiate db $ instatntitate client
 $database = new Database();
 $db = $database->getConnection();
 

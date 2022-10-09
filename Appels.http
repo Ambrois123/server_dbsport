@@ -6,3 +6,22 @@ Accept: application/json
 GET http://localhost/server_dbsport/api/client/read_single.php?id=1 HTTP/1.1
 Accept: application/json
 
+###
+POST http://localhost/server_dbsport/api/client/create.php HTTP/1.1
+Accept: application/json
+
+{
+    "client_name": "LION HEART",
+    "client_adress" : "12 liliane Desgraves 31500, Toulouse",
+    "client_active" : "",
+    "client_phone" : "33578234156",
+    "client_email" : "knockout@gmail.com",
+    "client_dpo" : "Jayson Bloom",
+    "client_tech" : "Eric Guérin",
+    "client_com ": "Alice Tagliatelle",
+    "client_url" : "www.knockout.com",
+    "client_logo ": "knockout.png",
+    "client_historic" : "Implanté en 2000 dans la ville rose",
+    "client_prez" : "Laboxe pour tous"
+}
+
