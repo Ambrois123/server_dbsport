@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=UTF-8');
 
 include_once '../../Config/Database.php';
 include_once '../../models//Client.php';
@@ -10,6 +10,7 @@ $db = $database->getConnection();
 
 $client = new Client($db);
 
+// call read function
 $result = $client->read();
 
 $num = $result->rowCount();
@@ -18,10 +19,13 @@ if($num > 0) {
     $clients_arr = array();
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
+
+        //transform bool in true or false
+        $row['client_active'] = (bool) $row['client_active'];
         extract($row);
 
-        $client_item=array(
-           'client_id' => $client_id,
+        $client_item = array(
+           'id' => $id,
            'client_name' => $client_name,
            'client_adress' => $client_adress,
            'client_active' => $client_active,
@@ -38,7 +42,7 @@ if($num > 0) {
 
         array_push($clients_arr, $client_item);
     }
-
+        //json format
     echo json_encode($clients_arr);
 }else{
     echo json_encode((
