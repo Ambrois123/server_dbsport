@@ -28,11 +28,17 @@ if($num > 0) {
         extract($row);
 
         $salle_item = array(
-           'id' => $id,
+           'salle_id' => $id,
            'salle_name' => $salle_name,
            'salle_address' => $salle_address,
            'salle_active' => $salle_active,
            'client_name' => $client_name,
+           'client_dpo' => $client_dpo,
+           'client_tech' => $client_tech,
+           'branch_id' => $branch_id,
+           'branch_name' => $branch_name,
+           'zone_id' => $zones_id,
+           'zone_name' => $zone_name,
         );
 
         array_push($salles_arr, $salle_item);

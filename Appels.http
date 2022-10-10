@@ -11,7 +11,7 @@ POST http://localhost/server_dbsport/api/client/create.php HTTP/1.1
 Accept: application/json
 
 {
-    "client_name": "FORCE ZONE",
+    "client_name": "ALIEN ZONE",
     "client_adress" : "56 liliane Desgraves 31500, Toulouse",
     "client_active" : "",
     "client_phone" : "33578234156",
