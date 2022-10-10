@@ -3,7 +3,7 @@ GET http://localhost/server_dbsport/api/client/read.php HTTP/1.1
 Accept: application/json
 
 ###
-GET http://localhost/server_dbsport/api/client/read_single.php?id=9 HTTP/1.1
+GET http://localhost/server_dbsport/api/client/read_single.php?id=2 HTTP/1.1
 Accept: application/json
 
 ###
@@ -11,7 +11,7 @@ POST http://localhost/server_dbsport/api/client/create.php HTTP/1.1
 Accept: application/json
 
 {
-    "client_name": "MELO BEAUTY",
+    "client_name": "FORCE ZONE",
     "client_adress" : "56 liliane Desgraves 31500, Toulouse",
     "client_active" : "",
     "client_phone" : "33578234156",
@@ -55,3 +55,7 @@ Accept: application/json
     "id" : "9"
 }
 
+//salle controller///
+###
+GET http://localhost/server_dbsport/api/salle/read.php HTTP/1.1
+Accept: application/json

@@ -35,7 +35,7 @@ class Client {
         $stmt =$this->conn->prepare($sql);
         
 
-        //execute query
+        //execute sql
         $stmt->execute();
 
         return $stmt;
