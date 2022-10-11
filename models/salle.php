@@ -8,7 +8,7 @@ class Salle {
     //salle properties
     public $id;
     public $salle_name;
-    public $salle_adress;
+    public $salle_address;
     public $salle_active;
     public $client_name;
     public $branch_id;
@@ -62,6 +62,13 @@ class Salle {
         $this->salle_name = $row['salle_name'];
         $this->salle_address= $row['salle_address'];
         $this->salle_active = $row['salle_active'];
+        $this->client_name = $row['client_name'];
+        $this->client_dpo = $row['client_dpo'];
+        $this->client_tech = $row['client_tech'];
+        $this->branch_id = $row['branch_id'];
+        $this->branch_name = $row['branch_name'];
+        $this->zone_id= $row['zones_id'];
+        $this->zone_name= $row['zone_name'];
         
     }
 

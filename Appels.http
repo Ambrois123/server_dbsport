@@ -61,7 +61,7 @@ GET http://localhost/server_dbsport/api/salle/read.php HTTP/1.1
 Accept: application/json
 
 ###
-GET http://localhost/server_dbsport/api/salle/read_single.php?id=2 HTTP/1.1
+GET http://localhost/server_dbsport/api/salle/read_single.php?id=1 HTTP/1.1
 Accept: application/json
 
 ###
