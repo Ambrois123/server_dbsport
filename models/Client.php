@@ -48,7 +48,7 @@ class Client {
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(1, $this->id);
 
-             //execute query
+             //execute 
             $stmt->execute();
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -36,4 +36,60 @@ class Salle {
 
         return $stmt;
     }
+
+    public function read_single(){
+        $sql ="SELECT * FROM salle
+        INNER JOIN client ON salle.id = client.id
+        INNER JOIN branch on salle.id = branch_id
+        INNER JOIN zones ON salle.id = zones_id
+        WHERE salle.id = ? LIMIT 0,1
+        ";
+
+        $stmt = $this->conn->prepare($sql);
+
+        //bind id
+        $stmt->bindParam(1, $this->id);
+
+        //execute
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row !== false) {
+            $row['salle_active'] = (bool) $row['salle_active'];
+        }
+
+        //set porperties
+        $this->salle_id = $row['id'];
+        $this->salle_name = $row['salle_name'];
+        $this->salle_address= $row['salle_address'];
+        $this->salle_active = $row['salle_active'];
+        
+    }
+
+    public function create(){
+        $sql = "INSERT INTO salle
+        SET
+        salle_name = :salle_name,
+        salle_address = :salle_address,
+        ";
+
+        $stmt = $this->conn->prepare($sql);
+
+        //clean data
+        $this->salle_name = htmlspecialchars(strip_tags($this->salle_name));
+        $this->salle_address = htmlspecialchars(strip_tags($this->salle_address));
+
+
+        //bind data
+        $stmt->bindParam(':salle_name', $this->salle_name);
+        $stmt->bindParam(':salle_address', $this->salle_address);
+
+        //execute
+        if($stmt->execute()){
+            return true;
+        }
+
+        printf("Erreur: %.\n", $stmt->error);
+
+        return false;
+    }
 }

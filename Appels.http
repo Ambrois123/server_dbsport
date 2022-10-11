@@ -59,3 +59,16 @@ Accept: application/json
 ###
 GET http://localhost/server_dbsport/api/salle/read.php HTTP/1.1
 Accept: application/json
+
+###
+GET http://localhost/server_dbsport/api/salle/read_single.php?id=2 HTTP/1.1
+Accept: application/json
+
+###
+POST http://localhost/server_dbsport/api/salle/create.php HTTP/1.1
+Accept: application/json
+
+{
+    "salle_name" : "Men Force_ Toulouse centre",
+    "salle_adress" : "13rue de lafayette, Toulouse 31500"
+}
