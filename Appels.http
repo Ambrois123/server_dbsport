@@ -11,13 +11,13 @@ POST http://localhost/server_dbsport/api/client/create.php HTTP/1.1
 Accept: application/json
 
 {
-    "client_name": "ALIEN ZONE",
-    "client_adress" : "56 liliane Desgraves 31500, Toulouse",
+    "client_name": "GREEN ZONE FORCE",
+    "client_adress" : "123 liliane Desgraves 31500, Toulouse",
     "client_active" : "",
     "client_phone" : "33578234156",
     "client_email" : "knockout@gmail.com",
     "client_dpo" : "Jayson Bloom",
-    "client_tech" : "Eric Guérin",
+    "client_tech" : "Eric Scoop",
     "client_com ": "Alice Tagliatelle",
     "client_url" : "www.knockout.com",
     "client_logo ": "knockout.png",

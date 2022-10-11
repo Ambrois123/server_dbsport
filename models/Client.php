@@ -3,7 +3,6 @@
 class Client {
     //db param
     private $conn;
-    private $table = 'client';
 
     //client properties
     public $id;
